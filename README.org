@@ -1,0 +1,29 @@
+* COMMENT -*- mode: org -*-
+#+Date: 2017-05-07
+Time-stamp: <2017-05-07>
+
+* an example that shows how to write a REPL using python's built-in cmd library.
+Typical application with REPL experience includes "python -i", Matlab,
+redis-cli, ftp, virsh, etc. When design your app as REPL, user can keep
+interacting with your system and your app may maintain some states in each
+session.
+
+cmd module official document:
+https://docs.python.org/3/library/cmd.html
+
+Cmd is a very typical framework. You define some event handler and the
+framework will handle everything else.
+
+Major info when using this lib:
+
+#+BEGIN_QUOTE
+An end-of-file on input is passed back as the string 'EOF'.
+
+An interpreter instance will recognize a command name foo if and only if it
+has a method do_foo(). As a special case, a line beginning with the character
+'?' is dispatched to the method do_help(). As another special case, a line
+beginning with the character '!' is dispatched to the method do_shell() (if
+such a method is defined).
+#+END_QUOTE
+
+The example code is in main.py
